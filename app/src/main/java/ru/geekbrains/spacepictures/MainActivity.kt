@@ -8,4 +8,6 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
     }
+
+    // ЧЕРНОВИК ПРОЕКТА (только приступил к ДЗ)
 }
