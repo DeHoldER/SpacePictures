@@ -9,5 +9,5 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
     }
 
-    // ЧЕРНОВИК ПРОЕКТА (только приступил к ДЗ)
+    // ЧЕРНОВИК ПРОЕКТА (только приступил к ДЗ )
 }
