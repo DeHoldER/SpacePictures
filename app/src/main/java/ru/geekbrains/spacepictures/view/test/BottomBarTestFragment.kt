@@ -1,31 +1,21 @@
-package ru.geekbrains.spacepictures.view
+package ru.geekbrains.spacepictures.view.test
 
 import android.os.Bundle
 import android.view.*
 import android.widget.Toast
 import androidx.core.content.ContextCompat
-import androidx.fragment.app.Fragment
 import com.google.android.material.bottomappbar.BottomAppBar
 import ru.geekbrains.spacepictures.R
 import ru.geekbrains.spacepictures.databinding.FragmentBottomBarTestBinding
+import ru.geekbrains.spacepictures.view.MainActivity
+import ru.geekbrains.spacepictures.view.ViewBindingFragment
 
-class BottomBarTestFragment : Fragment() {
-
-    private val binding get() = _binding!!
-    private var _binding: FragmentBottomBarTestBinding? = null
+class BottomBarTestFragment :
+    ViewBindingFragment<FragmentBottomBarTestBinding>(FragmentBottomBarTestBinding::inflate) {
 
     companion object {
         fun newInstance() = BottomBarTestFragment()
         private var isMain = true
-    }
-
-    override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View {
-        _binding = FragmentBottomBarTestBinding.inflate(inflater, container, false)
-        return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -40,6 +30,7 @@ class BottomBarTestFragment : Fragment() {
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
+
             android.R.id.home -> {
                 activity?.let {
                     BottomNavigationDrawerFragment().show(it.supportFragmentManager, "tag")
@@ -49,10 +40,11 @@ class BottomBarTestFragment : Fragment() {
                 context, "Favourite",
                 Toast.LENGTH_SHORT
             ).show()
-            R.id.app_bar_search -> Toast.makeText(
-                context, "Search",
-                Toast.LENGTH_SHORT
-            ).show()
+            R.id.app_bar_settings ->
+                activity?.supportFragmentManager?.beginTransaction()?.replace(
+                    R.id.fragment_container,
+                    ChipsFragment()
+                )?.addToBackStack(null)?.commit()
         }
         return super.onOptionsItemSelected(item)
     }

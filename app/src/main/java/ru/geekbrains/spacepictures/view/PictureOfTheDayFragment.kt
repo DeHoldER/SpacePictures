@@ -8,19 +8,15 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.constraintlayout.widget.ConstraintLayout
-import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import coil.load
 import com.google.android.material.bottomsheet.BottomSheetBehavior
 import ru.geekbrains.spacepictures.model.repository.POD.PictureOfTheDayData
 import ru.geekbrains.spacepictures.PictureOfTheDayViewModel
 import ru.geekbrains.spacepictures.R
-import ru.geekbrains.spacepictures.databinding.FragmentMainBinding
+import ru.geekbrains.spacepictures.databinding.FragmentPictureOfTheDayBinding
 
-class PictureOfTheDayFragment : Fragment() {
-
-    private val binding get() = _binding!!
-    private var _binding: FragmentMainBinding? = null
+class PictureOfTheDayFragment : ViewBindingFragment<FragmentPictureOfTheDayBinding>(FragmentPictureOfTheDayBinding::inflate) {
 
     private lateinit var bottomSheetBehavior: BottomSheetBehavior<ConstraintLayout>
 
@@ -30,15 +26,6 @@ class PictureOfTheDayFragment : Fragment() {
 
     companion object {
         fun newInstance() = PictureOfTheDayFragment()
-    }
-
-    override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View {
-        _binding = FragmentMainBinding.inflate(inflater, container, false)
-        return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -94,12 +81,6 @@ class PictureOfTheDayFragment : Fragment() {
             is PictureOfTheDayData.Error -> {
             }
         }
-    }
-
-
-    override fun onDestroy() {
-        super.onDestroy()
-        _binding = null
     }
 
 }

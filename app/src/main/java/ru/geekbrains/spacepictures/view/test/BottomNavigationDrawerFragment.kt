@@ -1,4 +1,4 @@
-package ru.geekbrains.spacepictures.view
+package ru.geekbrains.spacepictures.view.test
 
 import android.os.Bundle
 import android.view.LayoutInflater
