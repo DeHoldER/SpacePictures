@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">SpacePictures</string>
+    <string name="app_name">Space Pictures</string>
     <string name="photo_of_the_day_stub">Фото дня</string>
     <string name="search_wiki">Что ищем?</string>
     <string name="wiki_helper_text">искать в Википедии</string>
