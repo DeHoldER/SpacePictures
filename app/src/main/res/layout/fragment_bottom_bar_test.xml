@@ -19,7 +19,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom"
-        app:backgroundTint="@color/colorPrimaryDark"
+        app:backgroundTint="?themeColorPrimary"
         app:fabAlignmentMode="center"
         app:fabCradleRoundedCornerRadius="15dp"
         app:hideOnScroll="true"
@@ -30,7 +30,7 @@
         android:id="@+id/fab"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:backgroundTint="@color/colorAccent"
+        android:backgroundTint="?themeColorAccent"
         app:layout_anchor="@id/bottom_app_bar"
         app:srcCompat="@drawable/ic_plus_fab"
         app:tint="#FFFFFF" />

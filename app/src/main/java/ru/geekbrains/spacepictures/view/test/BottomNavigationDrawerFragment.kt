@@ -16,7 +16,7 @@ class BottomNavigationDrawerFragment : BottomSheetDialogFragment() {
         savedInstanceState: Bundle?
     ): View? {
         return inflater.inflate(
-            R.layout.bottom_navigation_layout, container,
+            R.layout.layout_bottom_navigation, container,
             false
         )
     }

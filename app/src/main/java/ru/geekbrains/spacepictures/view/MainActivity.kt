@@ -10,7 +10,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        setTheme(R.style.PinkTheme)
+        setTheme(R.style.AppTheme_PinkTheme)
 
         supportFragmentManager.beginTransaction()
             .replace(R.id.fragment_container, BottomBarTestFragment.newInstance())
