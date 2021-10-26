@@ -43,7 +43,7 @@ class BottomBarTestFragment :
             R.id.app_bar_settings ->
                 activity?.supportFragmentManager?.beginTransaction()?.replace(
                     R.id.fragment_container,
-                    ChipsFragment()
+                    SettingsFragment()
                 )?.addToBackStack(null)?.commit()
         }
         return super.onOptionsItemSelected(item)

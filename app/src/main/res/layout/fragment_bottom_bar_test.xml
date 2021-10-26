@@ -8,10 +8,28 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:layout_height="wrap_content">
+
         <TextView
+            style="@style/AppTextBox.Header"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_margin="@dimen/margin_text"
+            android:justificationMode="inter_word"
+            android:text="Земля" />
+
+        <TextView
+            style="@style/AppTextBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/margin_text"
+            android:justificationMode="inter_word"
             android:text="@string/test" />
+        </LinearLayout>
+
     </androidx.core.widget.NestedScrollView>
 
     <com.google.android.material.bottomappbar.BottomAppBar

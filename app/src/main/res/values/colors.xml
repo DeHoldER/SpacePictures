@@ -21,4 +21,6 @@
     <color name="pink">#A60043</color>
     <color name="pink_dark">#6C002C</color>
     <color name="pink_light">#D33574</color>
+
+    <color name="background">#43A047</color>
 </resources>

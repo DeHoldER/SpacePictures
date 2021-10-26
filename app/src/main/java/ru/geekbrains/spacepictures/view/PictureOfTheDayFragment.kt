@@ -15,6 +15,7 @@ import ru.geekbrains.spacepictures.model.repository.POD.PictureOfTheDayData
 import ru.geekbrains.spacepictures.PictureOfTheDayViewModel
 import ru.geekbrains.spacepictures.R
 import ru.geekbrains.spacepictures.databinding.FragmentPictureOfTheDayBinding
+import ru.geekbrains.spacepictures.util.WIKI_BASE_URL_RU
 
 class PictureOfTheDayFragment : ViewBindingFragment<FragmentPictureOfTheDayBinding>(FragmentPictureOfTheDayBinding::inflate) {
 
@@ -39,7 +40,7 @@ class PictureOfTheDayFragment : ViewBindingFragment<FragmentPictureOfTheDayBindi
         binding.inputLayout.setEndIconOnClickListener {
             startActivity(Intent(Intent.ACTION_VIEW).apply {
                 data =
-                    Uri.parse("http://ru.wikipedia.org/wiki/${binding.inputEditText.text.toString()}")
+                    Uri.parse("$WIKI_BASE_URL_RU${binding.inputEditText.text.toString()}")
             })
         }
     }

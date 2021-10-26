@@ -2,6 +2,7 @@ package ru.geekbrains.spacepictures.view
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.annotation.StyleRes
 import ru.geekbrains.spacepictures.R
 import ru.geekbrains.spacepictures.view.test.BottomBarTestFragment
 
@@ -10,7 +11,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        setTheme(R.style.AppTheme_PinkTheme)
+        setTheme(ThemeHolder.theme)
 
         supportFragmentManager.beginTransaction()
             .replace(R.id.fragment_container, BottomBarTestFragment.newInstance())
@@ -19,5 +20,8 @@ class MainActivity : AppCompatActivity() {
     }
 
 
-    // ЧЕРНОВИК ПРОЕКТА (только приступил к ДЗ )
+    object ThemeHolder {
+        @StyleRes
+        var theme: Int = R.style.AppTheme_IndigoTheme
+    }
 }
