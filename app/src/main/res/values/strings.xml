@@ -12,6 +12,7 @@
     <string name="btn_text_theme_default">Индиго (по умолчанию)</string>
     <string name="btn_text_theme_indigo">Индиго</string>
     <string name="btn_text_theme_pink">Розовая</string>
-    <string name="btn_text_theme_martian">Марсианская</string>
+    <string name="btn_text_theme_mars">Марс</string>
     <string name="txt_themes">Темы</string>
+    <string name="btn_text_theme_jupiter">Юпитер</string>
 </resources>

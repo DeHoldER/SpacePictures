@@ -21,6 +21,12 @@
     <color name="pink">#A60043</color>
     <color name="pink_dark">#6C002C</color>
     <color name="pink_light">#D33574</color>
+    <color name="mars_primary">#A65E4F</color>
+    <color name="mars_dark">#79493F</color>
+    <color name="mars_light">#F57B54</color>
+    <color name="jupiter_primary">#DE8E2B</color>
+    <color name="jupiter_dark">#8C4706</color>
+    <color name="jupiter_light">#FFC679</color>
 
     <color name="background">#43A047</color>
 </resources>

@@ -16,9 +16,10 @@
         <!-- Customize your theme here. -->
     </style>
 
-    <style name="AppTheme.IndigoTheme">
+    <style name="AppTheme.Indigo">
         <item name="themeStatusBarColor">@color/pink_dark</item>
         <item name="themeColorPrimary">@color/indigo</item>
+        <item name="themeColorSecondary">@color/indigo_dark</item>
         <item name="colorPrimaryDark">@color/indigo_dark</item>
         <item name="themeColorAccent">@color/indigo_light</item>
         <item name="android:textColorPrimary">@color/black</item>
@@ -26,11 +27,30 @@
         <item name="textColorDisConnected">@color/light_gray</item>
     </style>
 
-    <style name="AppTheme.PinkTheme">
+    <style name="AppTheme.Pink">
         <item name="themeStatusBarColor">@color/pink_dark</item>
         <item name="themeColorPrimary">@color/pink</item>
+        <item name="themeColorSecondary">@color/pink_dark</item>
         <item name="colorPrimaryDark">@color/pink_dark</item>
         <item name="themeColorAccent">@color/pink_light</item>
+        <item name="android:textColorPrimary">@color/black</item>
+        <item name="textColorDisConnected">@color/light_gray</item>
+    </style>
+
+    <style name="AppTheme.Mars">
+        <item name="themeColorPrimary">@color/mars_primary</item>
+        <item name="themeColorSecondary">@color/mars_dark</item>
+        <item name="colorPrimaryDark">@color/mars_dark</item>
+        <item name="themeColorAccent">@color/mars_light</item>
+        <item name="android:textColorPrimary">@color/black</item>
+        <item name="textColorDisConnected">@color/light_gray</item>
+    </style>
+
+    <style name="AppTheme.Jupiter">
+        <item name="themeColorPrimary">@color/jupiter_primary</item>
+        <item name="themeColorSecondary">@color/jupiter_dark</item>
+        <item name="colorPrimaryDark">@color/jupiter_dark</item>
+        <item name="themeColorAccent">@color/jupiter_light</item>
         <item name="android:textColorPrimary">@color/black</item>
         <item name="textColorDisConnected">@color/light_gray</item>
     </style>
@@ -41,7 +61,7 @@
         <item name="colorAccent">?themeColorAccent</item>
         <item name="android:statusBarColor">?themeStatusBarColor</item>
         <item name="colorOnPrimary">#FFFFFF</item>
-        <item name="colorSecondary">@color/colorAccent</item>
+        <item name="colorSecondary">?themeColorSecondary</item>
         <item name="colorSecondaryVariant">#0039CB</item>
         <item name="colorOnSecondary">#FFFFFF</item>
         <item name="colorError">#F44336</item>
@@ -65,6 +85,7 @@
         <item name="cornerFamily">cut</item>
         <item name="cornerSize">8dp</item>
     </style>
+
 
 
 </resources>

@@ -28,7 +28,12 @@
         android:id="@+id/btn_theme_mars"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/btn_text_theme_martian"
-        android:visibility="gone" />
+        android:text="@string/btn_text_theme_mars" />
+
+    <com.google.android.material.radiobutton.MaterialRadioButton
+        android:id="@+id/btn_theme_jupiter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/btn_text_theme_jupiter" />
 
 </LinearLayout>
