@@ -15,4 +15,7 @@
     <string name="btn_text_theme_mars">Марс</string>
     <string name="txt_themes">Темы</string>
     <string name="btn_text_theme_jupiter">Юпитер</string>
+    <string name="txt_earth">Земля</string>
+    <string name="txt_mars">Марс</string>
+    <string name="txt_weather">Погода</string>
 </resources>

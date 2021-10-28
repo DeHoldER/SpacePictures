@@ -10,6 +10,7 @@
     <color name="color_gray">#A0A0A0</color>
 
     <color name="colorAccent">#A15BEC</color>
+    <color name="colorAccent40Alpha">#66A15BEC</color>
     <color name="colorPrimaryDark">#290561</color>
 
     <color name="indigo">#4B0082</color>
