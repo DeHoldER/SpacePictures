@@ -1,4 +1,4 @@
-package ru.geekbrains.spacepictures
+package ru.geekbrains.spacepictures.viewmodel
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
@@ -6,6 +6,7 @@ import androidx.lifecycle.ViewModel
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
+import ru.geekbrains.spacepictures.BuildConfig
 import ru.geekbrains.spacepictures.model.repository.POD.PODRetrofitImpl
 import ru.geekbrains.spacepictures.model.repository.POD.PODServerResponseData
 import ru.geekbrains.spacepictures.model.repository.POD.PictureOfTheDayData

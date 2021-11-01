@@ -5,7 +5,7 @@ import android.view.View
 import android.widget.Toast
 import com.google.android.material.chip.Chip
 import ru.geekbrains.spacepictures.databinding.FragmentChipsBinding
-import ru.geekbrains.spacepictures.view.ViewBindingFragment
+import ru.geekbrains.spacepictures.util.ViewBindingFragment
 
 class ChipsFragment :
     ViewBindingFragment<FragmentChipsBinding>(FragmentChipsBinding::inflate) {

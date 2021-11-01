@@ -4,6 +4,7 @@ import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import ru.geekbrains.spacepictures.R
 import ru.geekbrains.spacepictures.view.MainActivity
+import ru.geekbrains.spacepictures.view.test.TestActivity
 
 object ThemeService {
     const val THEME_INDIGO = 0
@@ -12,7 +13,7 @@ object ThemeService {
     const val THEME_JUPITER = 3
     private const val SHARED_PREF_KEY = "themeNumber"
 
-    private lateinit var mainActivity: MainActivity
+    private lateinit var contextActivity: MainActivity
     private lateinit var sharedPref: SharedPreferences
 
     private var currentTheme = R.style.AppTheme_Indigo
@@ -34,18 +35,18 @@ object ThemeService {
             .edit()
             .putInt(SHARED_PREF_KEY, themeNumber)
             .apply()
-        mainActivity.setTheme(themesList[themeNumber])
-        mainActivity.recreate()
+        contextActivity.setTheme(themesList[themeNumber])
+        contextActivity.recreate()
     }
 
     fun registerActivity(activity: MainActivity) {
-            mainActivity = activity
-            sharedPref = mainActivity.getPreferences(AppCompatActivity.MODE_PRIVATE)
+            contextActivity = activity
+            sharedPref = contextActivity.getPreferences(AppCompatActivity.MODE_PRIVATE)
     }
 
     fun loadTheme() {
         currentTheme = getCurrentTheme()
-        mainActivity.setTheme(currentTheme)
+        contextActivity.setTheme(currentTheme)
     }
 
 

@@ -7,8 +7,8 @@ import androidx.core.content.ContextCompat
 import com.google.android.material.bottomappbar.BottomAppBar
 import ru.geekbrains.spacepictures.R
 import ru.geekbrains.spacepictures.databinding.FragmentBottomBarTestBinding
+import ru.geekbrains.spacepictures.util.ViewBindingFragment
 import ru.geekbrains.spacepictures.view.MainActivity
-import ru.geekbrains.spacepictures.view.ViewBindingFragment
 
 class BottomBarTestFragment :
     ViewBindingFragment<FragmentBottomBarTestBinding>(FragmentBottomBarTestBinding::inflate) {
@@ -43,7 +43,7 @@ class BottomBarTestFragment :
             R.id.app_bar_settings ->
                 activity?.supportFragmentManager?.beginTransaction()?.replace(
                     R.id.fragment_container,
-                    SettingsFragment()
+                    SettingsFragment.newInstance()
                 )?.addToBackStack(null)?.commit()
         }
         return super.onOptionsItemSelected(item)

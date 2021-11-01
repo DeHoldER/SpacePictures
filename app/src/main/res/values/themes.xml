@@ -2,7 +2,7 @@
     <!-- Base application theme. -->
     <style name="Theme.SpacePictures" parent="Theme.MaterialComponents.Light.NoActionBar">
         <!-- Primary brand color. -->
-        <item name="colorPrimary">@color/purple_500</item>
+        <item name="colorPrimary">@color/black</item>
         <item name="colorPrimaryVariant">@color/colorPrimaryDark</item>
         <item name="colorOnPrimary">@color/white</item>
         <item name="colorAccent">@color/colorAccent</item>

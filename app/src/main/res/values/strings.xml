@@ -18,4 +18,7 @@
     <string name="txt_earth">Земля</string>
     <string name="txt_mars">Марс</string>
     <string name="txt_weather">Погода</string>
+    <string name="txt_error_empty_link">Ошибка: пустая ссылка!</string>
+    <string name="txt_POD">Фото дня</string>
+    <string name="txt_more">Ещё</string>
 </resources>

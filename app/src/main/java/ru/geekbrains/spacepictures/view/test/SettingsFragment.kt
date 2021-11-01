@@ -5,7 +5,7 @@ import android.view.View
 import ru.geekbrains.spacepictures.R
 import ru.geekbrains.spacepictures.databinding.FragmentSettingsBinding
 import ru.geekbrains.spacepictures.util.ThemeService
-import ru.geekbrains.spacepictures.view.ViewBindingFragment
+import ru.geekbrains.spacepictures.util.ViewBindingFragment
 
 class SettingsFragment :
     ViewBindingFragment<FragmentSettingsBinding>(FragmentSettingsBinding::inflate) {
