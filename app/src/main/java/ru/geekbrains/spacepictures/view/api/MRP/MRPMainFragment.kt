@@ -4,11 +4,12 @@ import android.os.Bundle
 import android.view.View
 import androidx.lifecycle.ViewModelProvider
 import coil.load
-import ru.geekbrains.spacepictures.R
 import ru.geekbrains.spacepictures.databinding.FragmentMrpMainBinding
 import ru.geekbrains.spacepictures.model.repository.MRP.MRPData
 import ru.geekbrains.spacepictures.util.ViewBindingFragment
 import ru.geekbrains.spacepictures.viewmodel.MRPViewModel
+import kotlin.random.Random
+import kotlin.random.nextInt
 
 class MRPMainFragment :
     ViewBindingFragment<FragmentMrpMainBinding>(FragmentMrpMainBinding::inflate) {
@@ -34,12 +35,14 @@ class MRPMainFragment :
         when (data) {
             is MRPData.Success -> {
                 if (!data.serverResponseData.photosArray.isNullOrEmpty()) {
-                    val url = data.serverResponseData.photosArray[0].imageSource
+                val photosArray = data.serverResponseData.photosArray
+                    val url = photosArray[Random.nextInt(photosArray.indices)].imageSource
                     binding.imageView.load(url) {
                         switchLoadingVisibility(false)
                     }
                 }
             }
+            else -> switchLoadingVisibility()
         }
     }
 

@@ -9,7 +9,6 @@ import ru.geekbrains.spacepictures.BuildConfig
 import ru.geekbrains.spacepictures.model.repository.MRP.MRPData
 import ru.geekbrains.spacepictures.model.repository.MRP.MRPServerResponseData
 import ru.geekbrains.spacepictures.model.repository.requests.RetrofitImpl
-import java.text.SimpleDateFormat
 import java.util.*
 
 class MRPViewModel(
@@ -20,16 +19,12 @@ class MRPViewModel(
 ) : ViewModel() {
 
     fun getData(): MutableLiveData<MRPData> {
-        sendServerRequest()
+        sendServerRequest(getFormattedDate(0))
         return liveDataForViewToObserve
     }
 
-    private fun getDate(): String {
-        val today = SimpleDateFormat("yyyy-M-dd")
-        return today.format(Date())
-    }
-
-    private fun sendServerRequest() {
+    private fun sendServerRequest(date: String) {
+        var daysAgo = 0
         liveDataForViewToObserve.value = MRPData.Loading(null)
         val apiKey: String = BuildConfig.NASA_API_KEY
         if (apiKey.isBlank()) {
@@ -38,7 +33,7 @@ class MRPViewModel(
             retrofitImpl
                 .getRetrofitImpl()
                 .getPictureOfTheDay(
-                    date = getDate(),
+                    date = date,
                     apiKey = apiKey,
                     camera = "navcam"
                 )
@@ -48,8 +43,13 @@ class MRPViewModel(
                         response: Response<MRPServerResponseData>
                     ) {
                         if (response.isSuccessful && response.body() != null) {
-                            liveDataForViewToObserve.value =
-                                MRPData.Success(response.body()!!)
+                            if (!response.body()!!.photosArray.isNullOrEmpty()) {
+                                liveDataForViewToObserve.value =
+                                    MRPData.Success(response.body()!!)
+                            } else {
+                                daysAgo++
+                                sendServerRequest(getFormattedDate(daysAgo))
+                            }
                         } else {
                             val message = response.message()
                             if (message.isNullOrEmpty()) {
@@ -73,5 +73,18 @@ class MRPViewModel(
                     }
                 })
         }
+    }
+
+    private fun getFormattedDate(daysAgo: Int): String {
+        val calendar = Calendar.getInstance()
+        calendar.add(Calendar.DATE, -daysAgo)
+
+        return "${
+            calendar.get(Calendar.YEAR)
+        }-${
+            calendar.get(Calendar.MONTH) + 1
+        }-${
+            calendar.get(Calendar.DATE)
+        }"
     }
 }
