@@ -9,6 +9,7 @@ import ru.geekbrains.spacepictures.BuildConfig
 import ru.geekbrains.spacepictures.model.repository.MRP.MRPData
 import ru.geekbrains.spacepictures.model.repository.MRP.MRPServerResponseData
 import ru.geekbrains.spacepictures.model.repository.requests.RetrofitImpl
+import ru.geekbrains.spacepictures.util.CAMERA_NAVCAM
 import java.util.*
 
 class MRPViewModel(
@@ -35,7 +36,7 @@ class MRPViewModel(
                 .getPictureOfTheDay(
                     date = date,
                     apiKey = apiKey,
-                    camera = "navcam"
+                    camera = CAMERA_NAVCAM
                 )
                 .enqueue(object : Callback<MRPServerResponseData> {
                     override fun onResponse(

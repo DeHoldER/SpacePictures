@@ -1,7 +1,9 @@
 package ru.geekbrains.spacepictures.view.api.MRP
 
 import android.os.Bundle
+import android.view.LayoutInflater
 import android.view.View
+import android.view.ViewGroup
 import androidx.lifecycle.ViewModelProvider
 import coil.load
 import ru.geekbrains.spacepictures.databinding.FragmentMrpMainBinding
@@ -24,35 +26,40 @@ class MRPMainFragment :
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        viewModel
-            .getData()
-            .observe(viewLifecycleOwner, {
-                renderData(it)
-            })
+        binding.viewPager.adapter = ViewPagerAdapter(childFragmentManager)
     }
 
-    private fun renderData(data: MRPData) {
-        when (data) {
-            is MRPData.Success -> {
-                if (!data.serverResponseData.photosArray.isNullOrEmpty()) {
-                val photosArray = data.serverResponseData.photosArray
-                    val url = photosArray[Random.nextInt(photosArray.indices)].imageSource
-                    binding.imageView.load(url) {
-                        switchLoadingVisibility(false)
-                    }
-                }
-            }
-            else -> switchLoadingVisibility()
-        }
-    }
+//    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+//        super.onViewCreated(view, savedInstanceState)
+//        viewModel
+//            .getData()
+//            .observe(viewLifecycleOwner, {
+//                renderData(it)
+//            })
+//    }
 
-    private fun switchLoadingVisibility(isVisible: Boolean = true) {
-        with(binding) {
-            if (isVisible)
-                binding.mrpLoading.visibility = View.VISIBLE
-            else
-                binding.mrpLoading.visibility = View.GONE
-        }
-    }
+//    private fun renderData(data: MRPData) {
+//        when (data) {
+//            is MRPData.Success -> {
+//                if (!data.serverResponseData.photosArray.isNullOrEmpty()) {
+//                val photosArray = data.serverResponseData.photosArray
+//                    val url = photosArray[Random.nextInt(photosArray.indices)].imageSource
+//                    binding.imageView.load(url) {
+//                        switchLoadingVisibility(false)
+//                    }
+//                }
+//            }
+//            else -> switchLoadingVisibility()
+//        }
+//    }
+
+//    private fun switchLoadingVisibility(isVisible: Boolean = true) {
+//        with(binding) {
+//            if (isVisible)
+//                binding.mrpLoading.visibility = View.VISIBLE
+//            else
+//                binding.mrpLoading.visibility = View.GONE
+//        }
+//    }
 
 }
