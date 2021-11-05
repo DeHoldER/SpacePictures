@@ -4,6 +4,7 @@ import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
 import android.view.View
+import android.widget.FrameLayout
 import android.widget.TextView
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.lifecycle.ViewModelProvider
@@ -13,12 +14,13 @@ import ru.geekbrains.spacepictures.model.repository.POD.PictureOfTheDayData
 import ru.geekbrains.spacepictures.viewmodel.PictureOfTheDayViewModel
 import ru.geekbrains.spacepictures.R
 import ru.geekbrains.spacepictures.databinding.FragmentPictureOfTheDayBinding
+import ru.geekbrains.spacepictures.databinding.FragmentPodBinding
 import ru.geekbrains.spacepictures.util.WIKI_BASE_URL_RU
 import ru.geekbrains.spacepictures.util.showSnackBarWithResText
 import ru.geekbrains.spacepictures.util.ViewBindingFragment
 
 class PictureOfTheDayFragment :
-    ViewBindingFragment<FragmentPictureOfTheDayBinding>(FragmentPictureOfTheDayBinding::inflate) {
+    ViewBindingFragment<FragmentPodBinding>(FragmentPodBinding::inflate) {
 
     private lateinit var bottomSheetBehavior: BottomSheetBehavior<ConstraintLayout>
 
@@ -83,9 +85,10 @@ class PictureOfTheDayFragment :
     private fun switchLoadingVisibility(isVisible: Boolean = true) {
         with(binding) {
             if (isVisible)
-                binding.mainFragmentLoadingLayout.visibility = View.VISIBLE
+                loadingLayout.visibility = View.VISIBLE
             else
-                binding.mainFragmentLoadingLayout.visibility = View.GONE
+                loadingLayout.visibility = View.GONE
+
         }
     }
 
