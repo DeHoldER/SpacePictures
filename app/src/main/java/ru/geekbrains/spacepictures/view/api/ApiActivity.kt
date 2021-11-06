@@ -15,7 +15,7 @@ class ApiActivity : AppCompatActivity() {
 
         val activity = this
             binding.viewPager.adapter = ViewPagerAdapter(supportFragmentManager, activity)
-//        with(binding) {
+//        with(ru.geekbrains.spacepictures.view.test.binding) {
 //            viewPager.adapter = ViewPagerAdapter(supportFragmentManager, activity)
 //            tabLayout.setupWithViewPager(viewPager)
 //            tabLayout.getTabAt(EARTH_FRAGMENT)?.setIcon(R.drawable.ic_earth)

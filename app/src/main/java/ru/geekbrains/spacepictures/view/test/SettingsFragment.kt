@@ -6,6 +6,10 @@ import ru.geekbrains.spacepictures.R
 import ru.geekbrains.spacepictures.databinding.FragmentSettingsBinding
 import ru.geekbrains.spacepictures.util.ThemeService
 import ru.geekbrains.spacepictures.util.ViewBindingFragment
+import android.content.Intent
+
+
+
 
 class SettingsFragment :
     ViewBindingFragment<FragmentSettingsBinding>(FragmentSettingsBinding::inflate) {
@@ -33,6 +37,10 @@ class SettingsFragment :
         }
         binding.btnThemeJupiter.setOnClickListener {
             ThemeService.updateTheme(ThemeService.THEME_JUPITER)
+        }
+        binding.btnShowAnimations.setOnClickListener {
+            val intent = Intent(requireContext(), AnimationsActivity::class.java)
+            startActivity(intent)
         }
     }
 

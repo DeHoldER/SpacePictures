@@ -44,7 +44,7 @@ class MRPMainFragment :
 //                if (!data.serverResponseData.photosArray.isNullOrEmpty()) {
 //                val photosArray = data.serverResponseData.photosArray
 //                    val url = photosArray[Random.nextInt(photosArray.indices)].imageSource
-//                    binding.imageView.load(url) {
+//                    ru.geekbrains.spacepictures.view.test.binding.imageView.load(url) {
 //                        switchLoadingVisibility(false)
 //                    }
 //                }
@@ -54,11 +54,11 @@ class MRPMainFragment :
 //    }
 
 //    private fun switchLoadingVisibility(isVisible: Boolean = true) {
-//        with(binding) {
+//        with(ru.geekbrains.spacepictures.view.test.binding) {
 //            if (isVisible)
-//                binding.mrpLoading.visibility = View.VISIBLE
+//                ru.geekbrains.spacepictures.view.test.binding.mrpLoading.visibility = View.VISIBLE
 //            else
-//                binding.mrpLoading.visibility = View.GONE
+//                ru.geekbrains.spacepictures.view.test.binding.mrpLoading.visibility = View.GONE
 //        }
 //    }
 
