@@ -8,6 +8,7 @@ import ru.geekbrains.spacepictures.util.ThemeService
 import ru.geekbrains.spacepictures.util.ViewBindingFragment
 import android.content.Intent
 import ru.geekbrains.spacepictures.view.test.AnimationsActivity
+import ru.geekbrains.spacepictures.view.test.FabAnimationsActivity
 
 
 class SettingsFragment :
@@ -39,6 +40,10 @@ class SettingsFragment :
         }
         binding.btnShowAnimations.setOnClickListener {
             val intent = Intent(requireContext(), AnimationsActivity::class.java)
+            startActivity(intent)
+        }
+        binding.btnShowFabAnimations.setOnClickListener {
+            val intent = Intent(requireContext(), FabAnimationsActivity::class.java)
             startActivity(intent)
         }
     }
