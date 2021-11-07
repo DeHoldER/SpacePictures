@@ -18,6 +18,7 @@ class MRPViewModel(
     private val retrofitImpl: RetrofitImpl = RetrofitImpl()
 
 ) : ViewModel() {
+    private var daysAgo = 0
 
     fun getData(): MutableLiveData<MRPData> {
         sendServerRequest(getFormattedDate(0))
@@ -25,7 +26,6 @@ class MRPViewModel(
     }
 
     private fun sendServerRequest(date: String) {
-        var daysAgo = 0
         liveDataForViewToObserve.value = MRPData.Loading(null)
         val apiKey: String = BuildConfig.NASA_API_KEY
         if (apiKey.isBlank()) {
@@ -47,6 +47,7 @@ class MRPViewModel(
                             if (!response.body()!!.photosArray.isNullOrEmpty()) {
                                 liveDataForViewToObserve.value =
                                     MRPData.Success(response.body()!!)
+                                daysAgo = 0
                             } else {
                                 daysAgo++
                                 sendServerRequest(getFormattedDate(daysAgo))

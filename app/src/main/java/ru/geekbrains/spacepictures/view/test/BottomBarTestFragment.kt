@@ -9,6 +9,7 @@ import ru.geekbrains.spacepictures.R
 import ru.geekbrains.spacepictures.databinding.FragmentBottomBarTestBinding
 import ru.geekbrains.spacepictures.util.ViewBindingFragment
 import ru.geekbrains.spacepictures.view.MainActivity
+import ru.geekbrains.spacepictures.view.SettingsFragment
 
 class BottomBarTestFragment :
     ViewBindingFragment<FragmentBottomBarTestBinding>(FragmentBottomBarTestBinding::inflate) {

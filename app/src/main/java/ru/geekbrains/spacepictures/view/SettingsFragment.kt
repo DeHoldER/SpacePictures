@@ -1,4 +1,4 @@
-package ru.geekbrains.spacepictures.view.test
+package ru.geekbrains.spacepictures.view
 
 import android.os.Bundle
 import android.view.View
@@ -7,8 +7,7 @@ import ru.geekbrains.spacepictures.databinding.FragmentSettingsBinding
 import ru.geekbrains.spacepictures.util.ThemeService
 import ru.geekbrains.spacepictures.util.ViewBindingFragment
 import android.content.Intent
-
-
+import ru.geekbrains.spacepictures.view.test.AnimationsActivity
 
 
 class SettingsFragment :

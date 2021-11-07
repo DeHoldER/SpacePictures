@@ -8,7 +8,6 @@ import ru.geekbrains.spacepictures.databinding.ActivityMainBinding
 import ru.geekbrains.spacepictures.util.ThemeService
 import ru.geekbrains.spacepictures.view.api.MRP.MRPMainFragment
 import ru.geekbrains.spacepictures.view.api.POD.PictureOfTheDayFragment
-import ru.geekbrains.spacepictures.view.test.SettingsFragment
 
 private lateinit var binding: ActivityMainBinding
 
