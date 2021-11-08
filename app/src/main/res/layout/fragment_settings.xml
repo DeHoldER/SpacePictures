@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="10dp"
+    android:orientation="vertical">
+
+    <TextView
+        style="@style/AppTextBox.Header"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/txt_themes" />
+
+    <com.google.android.material.radiobutton.MaterialRadioButton
+        android:id="@+id/btn_theme_default"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/btn_text_theme_default" />
+
+    <com.google.android.material.radiobutton.MaterialRadioButton
+        android:id="@+id/btn_theme_pink"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/btn_text_theme_pink" />
+
+    <com.google.android.material.radiobutton.MaterialRadioButton
+        android:id="@+id/btn_theme_mars"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/btn_text_theme_mars" />
+
+    <com.google.android.material.radiobutton.MaterialRadioButton
+        android:id="@+id/btn_theme_jupiter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/btn_text_theme_jupiter" />
+
+    <Button
+        android:id="@+id/btnShowAnimations"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+    <Button
+        android:id="@+id/btnShowFabAnimations"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+</LinearLayout>
