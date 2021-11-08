@@ -66,11 +66,21 @@ class PictureOfTheDayFragment :
                     header?.text = serverResponseData.title
                     description?.text = serverResponseData.explanation
 
-                    binding.imageView.load(url) {
+                    with(binding) {
+                    imageView.load(url) {
                         lifecycle(this@PictureOfTheDayFragment)
                         error(R.drawable.ic_no_photo_vector)
                         placeholder(R.drawable.ic_no_photo_vector)
                         switchLoadingVisibility(false)
+                    }
+                        imageView.animate()
+                            .scaleX(0.95f)
+                            .scaleY(0.95f)
+                            .withEndAction {
+                                imageView.animate()
+                                    .scaleX(1.07f)
+                                    .scaleY(1.07f)
+                            }
                     }
                 }
             }

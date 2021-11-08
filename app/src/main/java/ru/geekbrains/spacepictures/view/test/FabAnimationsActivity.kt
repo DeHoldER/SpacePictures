@@ -4,9 +4,14 @@ import android.animation.Animator
 import android.animation.AnimatorListenerAdapter
 import android.animation.ObjectAnimator
 import android.os.Bundle
+import android.view.View
+import android.view.animation.BounceInterpolator
+import android.widget.ImageView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.transition.*
+import coil.load
+import coil.loadAny
 import ru.geekbrains.spacepictures.databinding.ActivityAnimationsFabBinding
 
 private lateinit var binding: ActivityAnimationsFabBinding
@@ -51,9 +56,13 @@ class FabAnimationsActivity : AppCompatActivity() {
 
     private fun expandFAB() {
         isExpanded = true
-        ObjectAnimator.ofFloat(binding.plusImageview, "rotation", 0f, 225f).start()
-        ObjectAnimator.ofFloat(binding.optionTwoContainer, "translationY",-130f).start()
-        ObjectAnimator.ofFloat(binding.optionOneContainer, "translationY",    -250f        ).start()
+
+        val objAnimator = ObjectAnimator.ofFloat(binding.plusImageview, "rotation", 0f, 225f)
+        objAnimator.interpolator = BounceInterpolator()
+        objAnimator.start()
+
+        ObjectAnimator.ofFloat(binding.optionTwoContainer, "translationY", -130f).start()
+        ObjectAnimator.ofFloat(binding.optionOneContainer, "translationY", -250f).start()
         binding.optionOneContainer.animate()
             .alpha(1f)
             .setDuration(300)
