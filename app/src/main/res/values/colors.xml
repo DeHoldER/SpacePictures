@@ -31,4 +31,7 @@
     <color name="jupiter_light">#FFC679</color>
 
     <color name="background">#43A047</color>
+    <color name="note_card_background">#EDEDED</color>
+    <color name="dark_grey">#3C3C3C</color>
+    <color name="light_grey">#7A7A7A</color>
 </resources>
