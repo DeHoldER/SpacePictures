@@ -23,41 +23,57 @@
             app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@drawable/ic_color_green" />
 
-        <androidx.constraintlayout.widget.ConstraintLayout
+        <LinearLayout
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_note_item"
+            android:orientation="vertical"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/dragHandleImageView"
             app:layout_constraintStart_toEndOf="@id/item_note_color"
             app:layout_constraintTop_toTopOf="parent">
 
             <TextView
                 android:id="@+id/item_note_title"
-                android:layout_width="0dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/margin_note_item"
                 android:maxLines="1"
                 android:textColor="@color/dark_grey"
                 android:textSize="@dimen/note_title_text_size"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
                 tools:text="Header" />
 
             <TextView
                 android:id="@+id/item_note_text_preview"
-                android:layout_width="0dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:maxLines="3"
                 android:textColor="@color/light_grey"
                 android:textSize="@dimen/note_text_preview_size"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="@id/item_note_title"
-                app:layout_constraintTop_toBottomOf="@id/item_note_title"
                 tools:text="Текст заметки. Текст заметки. Текст заметки. Текст заметки. Текст заметки. Текст заметки. Текст заметки. Текст заметки. Текст заметки. Текст заметки. " />
+        </LinearLayout>
 
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/dragHandleImageView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_note_item"
+            android:layout_marginBottom="@dimen/margin_note_item"
+            android:tint="@color/cardview_shadow_start_color"
+            app:layout_constraintBottom_toTopOf="@id/removeItem"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_hamburger_menu_bottom_bar" />
 
-        </androidx.constraintlayout.widget.ConstraintLayout>
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/removeItem"
+            android:layout_width="25dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/margin_note_item"
+            android:tint="@color/cardview_shadow_start_color"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/dragHandleImageView"
+            app:srcCompat="@android:drawable/ic_menu_delete" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
