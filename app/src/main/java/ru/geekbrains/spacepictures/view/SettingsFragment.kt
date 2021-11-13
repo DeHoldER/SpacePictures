@@ -9,6 +9,7 @@ import ru.geekbrains.spacepictures.util.ViewBindingFragment
 import android.content.Intent
 import ru.geekbrains.spacepictures.view.test.AnimationsActivity
 import ru.geekbrains.spacepictures.view.test.FabAnimationsActivity
+import ru.geekbrains.spacepictures.view.test.notes.NotesFragment
 
 
 class SettingsFragment :
@@ -45,6 +46,12 @@ class SettingsFragment :
         binding.btnShowFabAnimations.setOnClickListener {
             val intent = Intent(requireContext(), FabAnimationsActivity::class.java)
             startActivity(intent)
+        }
+
+        binding.btnOpenNotes.setOnClickListener {
+            requireActivity().supportFragmentManager.beginTransaction()
+                .replace(R.id.fragment_container, NotesFragment())
+                .commit()
         }
     }
 
