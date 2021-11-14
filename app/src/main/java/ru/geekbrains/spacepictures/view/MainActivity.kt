@@ -3,15 +3,21 @@ package ru.geekbrains.spacepictures.view
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.ViewModelProvider
 import ru.geekbrains.spacepictures.R
 import ru.geekbrains.spacepictures.databinding.ActivityMainBinding
 import ru.geekbrains.spacepictures.util.ThemeService
 import ru.geekbrains.spacepictures.view.api.MRP.MRPMainFragment
 import ru.geekbrains.spacepictures.view.api.POD.PictureOfTheDayFragment
+import ru.geekbrains.spacepictures.view.test.notes.NotesViewModel
 
 private lateinit var binding: ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
+
+    private val notesViewModel: NotesViewModel by lazy {
+        ViewModelProvider(this).get(NotesViewModel::class.java)
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -58,5 +64,9 @@ class MainActivity : AppCompatActivity() {
         supportFragmentManager.beginTransaction()
             .replace(R.id.fragment_container, fragment)
             .commit()
+    }
+
+    fun getViewModel(): NotesViewModel {
+        return notesViewModel
     }
 }

@@ -50,6 +50,7 @@
                 android:textColor="@color/light_grey"
                 android:textSize="@dimen/note_text_preview_size"
                 tools:text="Текст заметки. Текст заметки. Текст заметки. Текст заметки. Текст заметки. Текст заметки. Текст заметки. Текст заметки. Текст заметки. Текст заметки. " />
+
         </LinearLayout>
 
         <androidx.appcompat.widget.AppCompatImageView

@@ -76,9 +76,6 @@ class NotesAdapter(
 
     inner class HeaderViewHolder(view: View) : BaseViewHolder(view) {
         override fun bind(data: NoteData) {
-            itemView.setOnClickListener {
-                onListItemClickListener.onItemClick(data)
-            }
         }
     }
 
@@ -94,7 +91,7 @@ class NotesAdapter(
                 title.text = data.title
                 textPreview.text = data.text
                 itemView.setOnClickListener {
-                    onListItemClickListener.onItemClick(data)
+                    onListItemClickListener.onItemClick(data, layoutPosition)
                 }
             }
 
@@ -128,11 +125,9 @@ class NotesAdapter(
             if (layoutPosition != RecyclerView.NO_POSITION) {
                 title.text = data.title
                 textPreview.text = data.text
+
                 title.setOnClickListener {
-                    onListItemClickListener.onItemClick(data)
-                }
-                textPreview.setOnClickListener {
-                    onListItemClickListener.onItemClick(data)
+                    onListItemClickListener.onItemClick(data, layoutPosition)
                 }
             }
 
@@ -149,7 +144,7 @@ class NotesAdapter(
     }
 
     interface OnListItemClickListener {
-        fun onItemClick(data: NoteData)
+        fun onItemClick(data: NoteData, position: Int)
     }
 
     companion object {
