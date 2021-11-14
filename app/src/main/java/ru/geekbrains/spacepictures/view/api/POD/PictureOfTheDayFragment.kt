@@ -3,17 +3,19 @@ package ru.geekbrains.spacepictures.view.api.POD
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
+import android.text.Spannable
+import android.text.SpannableString
+import android.text.style.ForegroundColorSpan
 import android.view.View
-import android.widget.FrameLayout
 import android.widget.TextView
 import androidx.constraintlayout.widget.ConstraintLayout
+import androidx.core.content.ContextCompat
 import androidx.lifecycle.ViewModelProvider
 import coil.load
 import com.google.android.material.bottomsheet.BottomSheetBehavior
 import ru.geekbrains.spacepictures.model.repository.POD.PictureOfTheDayData
 import ru.geekbrains.spacepictures.viewmodel.PictureOfTheDayViewModel
 import ru.geekbrains.spacepictures.R
-import ru.geekbrains.spacepictures.databinding.FragmentPictureOfTheDayBinding
 import ru.geekbrains.spacepictures.databinding.FragmentPodBinding
 import ru.geekbrains.spacepictures.util.WIKI_BASE_URL_RU
 import ru.geekbrains.spacepictures.util.showSnackBarWithResText
@@ -66,13 +68,16 @@ class PictureOfTheDayFragment :
                     header?.text = serverResponseData.title
                     description?.text = serverResponseData.explanation
 
+                    decorateText(header)
+                    decorateText(description)
+
                     with(binding) {
-                    imageView.load(url) {
-                        lifecycle(this@PictureOfTheDayFragment)
-                        error(R.drawable.ic_no_photo_vector)
-                        placeholder(R.drawable.ic_no_photo_vector)
-                        switchLoadingVisibility(false)
-                    }
+                        imageView.load(url) {
+                            lifecycle(this@PictureOfTheDayFragment)
+                            error(R.drawable.ic_no_photo_vector)
+                            placeholder(R.drawable.ic_no_photo_vector)
+                            switchLoadingVisibility(false)
+                        }
                         imageView.animate()
                             .scaleX(0.95f)
                             .scaleY(0.95f)
@@ -82,6 +87,9 @@ class PictureOfTheDayFragment :
                                     .scaleY(1.07f)
                             }
                     }
+
+
+
                 }
             }
             is PictureOfTheDayData.Loading -> {
@@ -91,6 +99,22 @@ class PictureOfTheDayFragment :
             }
         }
     }
+
+    private fun decorateText(textView: TextView?) {
+        val spannableText = SpannableString(textView?.text.toString())
+        spannableText.setSpan(
+            ForegroundColorSpan(
+                ContextCompat.getColor(
+                    requireContext(),
+                    R.color.colorPrimary
+                )
+            ),
+            0, 1,
+            Spannable.SPAN_EXCLUSIVE_EXCLUSIVE
+        )
+        textView?.text = spannableText
+    }
+
 
     private fun switchLoadingVisibility(isVisible: Boolean = true) {
         with(binding) {
